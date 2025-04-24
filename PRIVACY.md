@@ -1,3 +1,3 @@
 # Privacy Policy
 
-本插件仅在处理过程中临时存储文件，处理完成后会立即删除。不会永久存储任何用户数据。
+This plugin only temporarily stores files during processing and deletes them immediately after completion. No user data is permanently stored by this plugin.
