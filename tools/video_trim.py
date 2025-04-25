@@ -64,10 +64,24 @@ class VideoTrimTool(Tool):
         try:
             # 设置临时文件
             file_extension = video_file.extension if video_file.extension else '.mp4'
+            format_type = file_extension.lstrip('.')
             
             # 获取原始文件名（不带扩展名）
             orig_filename = os.path.splitext(video_file.filename)[0]
             output_filename = f"{orig_filename}_trimmed{file_extension}"
+            
+            # 设置MIME类型映射
+            mime_types = {
+                'mp4': 'video/mp4',
+                'avi': 'video/x-msvideo',
+                'mov': 'video/quicktime',
+                'mkv': 'video/x-matroska',
+                'webm': 'video/webm',
+                'flv': 'video/x-flv',
+                'wmv': 'video/x-ms-wmv',
+                'm4v': 'video/x-m4v',
+                '3gp': 'video/3gpp'
+            }
             
             with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as in_temp_file:
                 in_temp_file.write(video_file.blob)
@@ -96,7 +110,7 @@ class VideoTrimTool(Tool):
                     trimmed_data,
                     meta={
                         "filename": output_filename,
-                        "mime_type": f"video/{file_extension.lstrip('.')}",
+                        "mime_type": mime_types.get(format_type, f"video/{format_type}"),
                     }
                 )
                 

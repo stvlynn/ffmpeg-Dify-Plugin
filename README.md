@@ -8,34 +8,56 @@
 
 FFmpeg plugin for Dify, enabling video and audio file processing and conversion. The plugin provides tools for retrieving video information, format conversion, trimming, compression, and audio extraction.
 
+## Requirements
+
+- FFmpeg must be installed on the system
+- Python 3.12+
+- **You must enable video file upload in Dify's Features > File Upload settings.**
+
+  1. Go to the **Features** tab in your Dify app and enable **File Upload**:
+
+     ![](./_assets/upload1.png)
+
+  2. In the File Upload settings, make sure to check the **Video** file type :
+
+     ![](./_assets/upload2.png)
+
+
 ## Features
 
 The plugin provides the following capabilities:
 
 ### 1. Video Information
 
+![](./_assets/video_info.png)
+
 Gets detailed technical information about a video file, including format, duration, resolution, codecs, and other metadata.
 
 ### 2. Video Conversion
+
+![](./_assets/convert1.png)
+![](./_assets/convert2.png)
 
 Converts video files from one format to another, supporting common formats like MP4, AVI, MOV, MKV, and more.
 
 ### 3. Video Trimming
 
+![](./_assets/video_trimming.png)
+
 Extracts a specific section of a video by specifying start and end times, maintaining the original quality.
 
 ### 4. Video Compression
+
+![](./_assets/compress_video.png)
 
 Compresses a video file to reduce its size while attempting to maintain reasonable quality. Useful for sharing videos or saving storage space.
 
 ### 5. Audio Extraction
 
+![](./_assets/audio.png)
+
 Extracts the audio track from a video file and saves it as an audio file in various formats.
 
-## Requirements
-
-- FFmpeg must be installed on the system
-- Python 3.12+
 
 ## Parameters
 
