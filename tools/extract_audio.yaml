@@ -38,6 +38,19 @@ parameters:
       pt_BR: O formato do áudio extraído (mp3, aac, wav, ogg, flac)
     llm_description: "The format to save the extracted audio in. Options are 'mp3', 'aac', 'wav', 'ogg', 'flac'. Default is 'mp3'."
     form: llm
+  - name: audio_attrs
+    type: string
+    required: false
+    label:
+      en_US: Audio Attrs
+      zh_Hans: 音频输出属性
+      pt_BR: Formato de Saída
+    human_description:
+      en_US: "The Attribute of the extracted audio ('ar': 16000, 'ac': 1)"
+      zh_Hans: "提取音频属性（'ar': 16000, 'ac': 1）"
+      pt_BR: "The Attribute of the extracted audio ('ar': 16000, 'ac': 1)"
+    llm_description: "The Attribute of the extracted audio. Options are ('ar': 16000, 'ac': 1). Default is empty."
+    form: llm
 extra:
   python:
     source: tools/extract_audio.py 
