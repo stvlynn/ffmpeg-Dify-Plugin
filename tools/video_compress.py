@@ -84,7 +84,8 @@ class VideoCompressTool(Tool):
                     ffmpeg
                     .input(in_temp_path)
                     .output(out_temp_path, crf=crf, preset=preset)
-                    .run(capture_stdout=True, capture_stderr=True, overwrite_output=True)
+                    .overwrite_output()
+                    .run(capture_stdout=True, capture_stderr=True)
                 )
                 
                 # 获取压缩后文件大小

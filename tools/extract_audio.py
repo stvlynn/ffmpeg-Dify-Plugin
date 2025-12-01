@@ -69,7 +69,8 @@ class ExtractAudioTool(Tool):
                     ffmpeg
                     .input(in_temp_path)
                     .output(out_temp_path, **output_args)
-                    .run(capture_stdout=True, capture_stderr=True, overwrite_output=True)
+                    .overwrite_output()
+                    .run(capture_stdout=True, capture_stderr=True)
                 )
 
                 # 读取输出文件

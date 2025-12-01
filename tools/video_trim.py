@@ -98,7 +98,8 @@ class VideoTrimTool(Tool):
                     ffmpeg
                     .input(in_temp_path, ss=start_seconds, to=end_seconds)
                     .output(out_temp_path, c='copy')
-                    .run(capture_stdout=True, capture_stderr=True, overwrite_output=True)
+                    .overwrite_output()
+                    .run(capture_stdout=True, capture_stderr=True)
                 )
                 
                 # 读取输出文件
